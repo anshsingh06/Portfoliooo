@@ -9,19 +9,7 @@ app.use(cors());
 
 
 require('dotenv').config();
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => console.log("MongoDB Connected to Atlas"))
-  .catch((err) => console.log("MongoDB Connection Error:", err));
-
-
-// MongoDB Atlas Connection
-mongoose.connect("mongodb+srv://anshsingh01227:LxdLVqcBz65palAn@cluster0.ggxss.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected to Atlas"))
   .catch((err) => console.log("MongoDB Connection Error:", err));
 
@@ -62,5 +50,5 @@ app.get("/messages", async (req, res) => {
 
 // Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:`));
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 
