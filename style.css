@@ -1960,19 +1960,20 @@
 
   .skills-slider {
     overflow: hidden;
-    width: 2000%;
     position: relative;
+    width: 100%;
   }
 
 
-   .skills-grid{  
-   gap: 20px;
-   margin-top: 30px;
-   display: flex;
-   animation: rotateSkills 200s linear infinite;
-   
-    
-  } 
+  .skills-grid {
+    gap: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: max-content;
+    animation: scrollSkills 30s linear infinite;
+  }
 
 
 
@@ -2030,14 +2031,14 @@
 
 
 /* Keyframes for the animation */
-@keyframes rotateSkills {
+@keyframes scrollSkills {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%); 
+    transform: translateX(-50%);
   }
-} 
+}
 
 
 
